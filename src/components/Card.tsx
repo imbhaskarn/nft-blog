@@ -15,7 +15,7 @@ const CardComponent = ({title, content, imageSrc, id} :any) => {
            {title}
           </h5>
         </a>
-        <p className="mb-3 font-normal text-gray-700">
+        <p className="mb-3 font-normal text-gray-700 truncate overflow-hidden">
           {content}
         </p>
         <a

@@ -1,5 +1,6 @@
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
+import Home from "../pages/index";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,9 +23,9 @@ const Navbar = () => {
         </div>
         <div className="block  sm:hidden">
           {isMenuOpen ? (
-            <CloseOutlined  onClick={toggleMenu} style={{ fontSize: '150%'}} />
+            <CloseOutlined onClick={toggleMenu} style={{ fontSize: "150%" }} />
           ) : (
-            <MenuOutlined style={{ fontSize: '150%'}} onClick={toggleMenu} />
+            <MenuOutlined style={{ fontSize: "150%" }} onClick={toggleMenu} />
           )}
         </div>
         <div className="sm:flex flex-row hidden items-center gap-5 mt-5 pb-2 overflow-x-auto sm:justify-end sm:mt-0 sm:pl-5 sm:pb-0 sm:overflow-x-visible">
@@ -40,19 +41,19 @@ const Navbar = () => {
               className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500"
               href="#"
             >
-              Link
+              Home
             </a>
             <a
               className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500"
               href="#"
             >
-              Link
+              About
             </a>
             <a
               className="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500"
               href="#"
             >
-              Link
+              Pricing
             </a>
           </ul>
         </div>

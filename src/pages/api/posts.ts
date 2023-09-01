@@ -9,13 +9,9 @@ type Post = {
   content: string;
 };
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req: any, res: any) {
   try {
     const dbPath = path.join(process.cwd(), "db", "database.db");
-    console.log(dbPath);
     if (req.method === "GET") {
       const db = await open({
         filename: dbPath,
@@ -23,20 +19,21 @@ export default async function handler(
       });
 
       // Parse query parameters to determine the range of posts to retrieve
-      const {offset } = req.query;
+      const page: any = parseInt(req.query.page) || 1; // Get page number from query parameter
 
-      // Convert query parameters to integers
-      const start = parseInt(offset as string, 10) || 0;
+      const offset = (page - 1) * 10;
 
       // Ensure that start and end values are within valid ranges
-      const skip = Math.max(0, start);
+      const skip = Math.max(0, offset);
 
       // Retrieve the specified range of posts from the SQLite database
-      const selectedPosts = await db.all(
-        `SELECT * FROM posts LIMIT 10 OFFSET ?`,[skip] 
-      );
-
-      return res.status(200).json(selectedPosts);
+      const Posts = await db.all(`SELECT * FROM posts LIMIT 10 OFFSET ?`, [
+        skip,
+      ]);
+      const allPosts: any = await db.all(`SELECT COUNT(*) FROM posts`);
+      return res
+        .status(200)
+        .json({ posts: Posts, allPosts: allPosts[0]["COUNT(*)"] });
     } else {
       return res.status(405).json({ message: "Method not allowed" });
     }
