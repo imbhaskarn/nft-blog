@@ -24,8 +24,8 @@ const Main = () => {
 
   return (
     <>
-      <main className="h-auto w-full bg-slate-50 flex justify-center items-center py-24 flex-grow">
-        <div className="relative m-auto flex h-auto  sm:w-8/12 justify-center text-center  flex-wrap p-4 gap-8">
+      <main className="h-auto w-full bg-slate-50 flex justify-center items-center py-24 px-4 flex-grow">
+        <div className="relative m-auto flex  w-11/12 h-11/12  sm:w-8/12 md:w-8/12 justify-center text-center  flex-wrap p-4 gap-8">
           {allPosts.map(
             (blog: { title: any; cover: any; content: any; id: any }) => {
               return (
@@ -34,7 +34,7 @@ const Main = () => {
                   <CardComponent
                     title={blog.title}
                     imageSrc={blog.cover || "/images/nftguy.jpg"}
-                    content={ReactHtmlParser(blog.content)}
+                    content={ReactHtmlParser(blog.content).slice(0, 300)}
                     id={blog.id}
                   />
                 </div>

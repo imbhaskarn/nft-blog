@@ -3,7 +3,9 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import blog from "../../data/data.json";
 
-const CardComponent = ({title, content, imageSrc, id} :any) => {
+const CardComponent = ({ title, content, imageSrc, id }: any) => {
+  const truncatedWords = content.slice(0, 300);
+
   return (
     <div className="max-w-sm bg-white 0 rounded-lg shadow relative">
       <a href="#">
@@ -12,11 +14,11 @@ const CardComponent = ({title, content, imageSrc, id} :any) => {
       <div className="p-5">
         <a href="#">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-           {title}
+            {title}
           </h5>
         </a>
-        <p className="mb-3 font-normal text-gray-700 truncate overflow-hidden">
-          {content}
+        <p className="mb-3 font-normal text-gray-700 h-48 overflow-hidden">
+          {truncatedWords}
         </p>
         <a
           href={`/blog/${id}`}
