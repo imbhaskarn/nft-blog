@@ -9,7 +9,7 @@ const Main = () => {
   const { page } = router.query;
   const isBlogPage = router.pathname.includes("/blog/");
   const [allPosts, setAllPosts] = useState([]);
-  const url = "http://localhost:5000/api/posts";
+  const url = "/api/posts";
   const params: any = {
     page: page || 1,
   };
