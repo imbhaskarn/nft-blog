@@ -33,7 +33,7 @@ export default async function handler(req: any, res: any) {
       const allPosts: any = await db.all(`SELECT COUNT(*) FROM posts`);
       return res
         .status(200)
-        .json({ posts: Posts, allPosts: allPosts[0]["COUNT(*)"] });
+        .json({ posts: Posts, total: allPosts[0]["COUNT(*)"] });
     } else {
       return res.status(405).json({ message: "Method not allowed" });
     }
