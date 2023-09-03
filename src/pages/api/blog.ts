@@ -26,7 +26,8 @@ export default async function handler(req: any, res: any) {
 
       // Retrieve the specified range of posts from the SQLite database
       const post = await db.all(`SELECT * FROM posts where id=?`, [postId]);
-      return res.status(200).json({ post : post});
+      const total: any = await db.all(`SELECT COUNT(*) FROM posts`);
+      return res.status(200).json({ post: post, total: total[0]["COUNT(*)"] });
     } else {
       return res.status(405).json({ message: "Method not allowed" });
     }
