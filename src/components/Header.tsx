@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
-import Router, { useRouter } from "next/router";
+import Router, { useRouter } from "node_modules/next/router";
 const Header = () => {
   const router = useRouter();
   const isBlogPage = router.pathname.includes("/blog/");

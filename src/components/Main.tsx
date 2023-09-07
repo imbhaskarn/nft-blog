@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 import ReactHtmlParser from "react-html-parser";
-import axios from "axios";
-import { useRouter } from "next/router";
+import axios from "node_modules/axios";
+import { useRouter } from "node_modules/next/router";
 import CardComponent from "./Card";
 
 const Main = () => {

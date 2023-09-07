@@ -19,7 +19,7 @@ const Footer = () => {
                 NFt Blog
               </span>
             </a>
-            <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+            <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 ">
               <li>
                 <a href="#" className="mr-4 hover:underline md:mr-6 ">
                   About
@@ -43,7 +43,7 @@ const Footer = () => {
             </ul>
           </div>
           <hr className="my-6 0 sm:mx-auto lg:my-8" />
-          <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          <span className="block text-sm text-gray-500 sm:text-center ">
             © 2023{" "}
             <a href="https://flowbite.com/" className="hover:underline">
               NFTblog™

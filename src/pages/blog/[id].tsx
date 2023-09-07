@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
+import { useRouter } from "node_modules/next/router";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "node_modules/axios";
 import ReactHtmlParser from "react-html-parser";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
